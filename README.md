@@ -1,6 +1,8 @@
 docker-vmware-tools
 ===================
 
+Folk git from https://hub.docker.com/r/sergeyzh/vmware-tools/
+
 VMWare tools for CoreOS in Docker image
 
 This image is intended to provide VMWare Tools for CoreOS running under *VMWare ESXi* without modification of CoreOS.

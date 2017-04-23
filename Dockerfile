@@ -1,6 +1,8 @@
-FROM sergeyzh/centos6-epel
+FROM centos:6
 
-MAINTAINER Sergey Zhukov, sergey@jetbrains.com
+MAINTAINER Boonchu Ngampairoijpibul <bigchoo@gmail.com>
+
+RUN yum install -y epel-release
 
 ADD vmware-tools.repo /etc/yum.repos.d/
 RUN yum install -y vmware-tools-esx-nox
