@@ -3,6 +3,9 @@ version: '2'
 services:
   docker-vmware-tools: 
     container_name: docker-vmware-tools
-    image: boonchu/docker-vmware-tools:latest
+    image: boonchu/docker-vmware-tools
     network_mode: "host"
     privileged: true
+    tty: true
+    volumes:
+      - /root/docker-vmware-tools/log/:/var/log/:ro

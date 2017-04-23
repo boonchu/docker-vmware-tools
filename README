@@ -1,6 +1,9 @@
 - build the fist docker image
 docker build -t boonchu/docker-vmware-tools .
 
+- check history
+docker history --no-trunc boonchu/docker-vmware-tools
+
 - tag to latest
 docker tag 539eb52c445b boonchu/docker-vmware-tools:latest
 
@@ -12,12 +15,19 @@ docker push boonchu/docker-vmware-tools
 The push refers to a repository [docker.io/boonchu/docker-vmware-tools]
 
 - use docker-compose.yml to pull latest image to test
-docker-compose up -d
+
+docker-compose -f docker-compose.yml down
+docker-compose -f docker-compose.yml up -d
 
 docker-compose ps
        Name                     Command             State   Ports
 -----------------------------------------------------------------
 docker-vmware-tools   /bin/sh -c /run-services.sh   Up
+
+- verify vmware-tools config file
+
+docker-compose run --rm docker-vmware-tools ls -ltra /etc/vmware-tools/tools.conf
+-rw-r--r-- 1 root root 106 Apr 23 15:46 /etc/vmware-tools/tools.conf
 
 - stop and rmeove the current test
 docker-compose stop
