@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  docker-vmware-tools: 
+    container_name: docker-vmware-tools
+    image: boonchu/docker-vmware-tools:latest
+    network_mode: "host"
+    privileged: true
